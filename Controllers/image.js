@@ -2,13 +2,12 @@
 const Clarifai = require('clarifai');
 
 const app = new Clarifai.App({
- apiKey: ''
+ apiKey: 'c945b02c1a644772bbf46999a351012b'
 });
 
 const handleApiCall = (req, res) => {
 app.models
-	.predict('', 
-      req.body.input)
+	.predict('a403429f2ddf4b49b307e318f00e528b', req.body.input)
 	.then(data => {
 			res.json(data);
 		})
@@ -27,6 +26,6 @@ const loadImage = (req, res, db) => {
 }
 
 module.exports = {
-	loadImage: loadImage,
-	handleApiCall: handleApiCall
+	loadImage,
+	handleApiCall
 }
