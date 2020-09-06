@@ -39,8 +39,8 @@ app.put('/image', (req, res) => { { image.loadImage(req, res, db) }})
 
 app.post('/imageurl', (req, res) => { { image.handleApiCall(req, res) }})
 
-app.listen(3000, () => {
-	console.log('working');
+app.listen(process.env.PORT || 3000, () => {
+	console.log('wapp is running on port ${process.env.PORT}');
 })
 
 
